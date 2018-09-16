@@ -1,0 +1,14 @@
+# Executable
+*.exe
+
+# IntelliJ files
+.idea/
+*.iml
+
+# Go Vendor dir
+vendor/
+go.sum
+
+# Other files
+*.log
+.DS_Store
