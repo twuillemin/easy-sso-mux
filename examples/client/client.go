@@ -28,7 +28,7 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
 
 	authentication, err := ssomiddleware.GetSsoAuthentication(r)
 	if err != nil {
-		log.Fatal("simpleHandler: Unable to do get the authentication information", err)
+		log.Fatal("helloHandler: Unable to do get the authentication information", err)
 	}
 
 	w.Write([]byte("Hello " + authentication.User))
