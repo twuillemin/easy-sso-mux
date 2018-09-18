@@ -15,13 +15,13 @@ func main() {
 	r.HandleFunc("/", helloHandler)
 
 	// Create a new instance of the middleware
-	ssoMiddleware, err := ssomiddleware.New("publicKeyFileName.pub")
+	authenticationMiddleware, err := ssomiddleware.New("publicKeyFileName.pub")
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	// Add the middleware to the endpoint
-	r.Use(ssoMiddleware.Middleware)
+	r.Use(authenticationMiddleware.Middleware)
 }
 
 func helloHandler(w http.ResponseWriter, r *http.Request) {

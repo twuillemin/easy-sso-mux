@@ -34,13 +34,13 @@ func createServer() {
 	r.HandleFunc("/", simpleHandler)
 
 	// Create a new instance of the middleware
-	ssoMiddleware, err := ssomiddleware.New("signing.pub")
+	authenticationMiddleware, err := ssomiddleware.NewWithDetailedLogs("signing.pub")
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	// Add the middleware to the endpoint
-	r.Use(ssoMiddleware.Middleware)
+	r.Use(authenticationMiddleware.Middleware)
 
 	http.ListenAndServe(":8080", r)
 }

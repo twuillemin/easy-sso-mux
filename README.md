@@ -4,6 +4,7 @@ EasySSO is a simple, but nonetheless efficient go package to integrate a Single 
  * [easy-sso-common](https://bitbucket.org/twuillemin/easy-sso-common): the common definition and structures used by all the sub-projects
  * [easy-sso](https://bitbucket.org/twuillemin/easy-sso): the SSO server component. Along with the server this project also include components for services (validating the query) and client (authenticating and connecting to the services). These components only rely on the Go default http.
  * [easy-sso-mux](https://bitbucket.org/twuillemin/easy-sso-mux): a middleware for the [gorilla/mux](https://github.com/gorilla/mux) router, validating client authentication.
+ * [easy-sso-negroni](https://bitbucket.org/twuillemin/easy-sso-negroni): a middleware for the [Negroni](https://github.com/urfave/negroni) web middleware, validating client authentication.
 
 
 # EasySSO Mux
@@ -23,13 +24,13 @@ must be given as a PEM file.
 Example
 ```go
 // Create a new instance of the middleware
-ssoMiddleware, err := ssomiddleware.New("publicKeyFileName.pub")
+authenticationMiddleware, err := ssomiddleware.New("publicKeyFileName.pub")
 if err != nil {
     log.Fatal(err)
 }
 ```
 ##Adding the middleware
-Adding the middleware use the standard gorilla/mux `Use` function
+For adding the middleware, simply use the function `ssomiddleware.Middleware` as a parameter to the standard gorilla/mux `Use` function
 
 ```go
 // Create a new gorilla/mux handler
@@ -37,7 +38,7 @@ r := mux.NewRouter()
 r.HandleFunc("/", helloHandler)
 
 // Add the middleware to the endpoint
-r.Use(ssoMiddleware.Middleware)
+r.Use(authenticationMiddleware.Middleware)
 ```
 
 Once the middleware is added, any query with a bad authentication will be rejected.
