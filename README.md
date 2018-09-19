@@ -73,10 +73,10 @@ A fully working example is provided with the project.
 
 # License
 
-Copyright 2018 Thomas Wuillemin
+Copyright 2018 Thomas Wuillemin  <thomas.wuillemin@gmail.com>
 
 Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
+you may not use this project or its content except in compliance with the License.
 You may obtain a copy of the License at
 
 http://www.apache.org/licenses/LICENSE-2.0
