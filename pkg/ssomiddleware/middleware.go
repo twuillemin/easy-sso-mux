@@ -1,11 +1,11 @@
 package ssomiddleware
 
 import (
-	"bitbucket.org/twuillemin/easy-sso-common/pkg/common"
 	"context"
 	"crypto/rsa"
 	"errors"
 	"github.com/dgrijalva/jwt-go"
+	"github.com/twuillemin/easy-sso-common/pkg/common"
 	"io/ioutil"
 	"log"
 	"net/http"

@@ -4,8 +4,8 @@ import (
 	"log"
 	"net/http"
 
-	"bitbucket.org/twuillemin/easy-sso-mux/pkg/ssomiddleware"
 	"github.com/gorilla/mux"
+	"github.com/twuillemin/easy-sso-mux/pkg/ssomiddleware"
 )
 
 func main() {

@@ -8,13 +8,13 @@ import (
 	"os"
 	"time"
 
-	"bitbucket.org/twuillemin/easy-sso-common/pkg/common"
-	"bitbucket.org/twuillemin/easy-sso-mux/pkg/ssomiddleware"
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gorilla/mux"
+	"github.com/twuillemin/easy-sso-common/pkg/common"
+	"github.com/twuillemin/easy-sso-mux/pkg/ssomiddleware"
 )
 
-const basePath string = "C:\\Users\\thwui\\go\\src\\bitbucket.org\\twuillemin\\easy-sso-mux\\examples\\fullchain"
+const basePath string = "C:\\Users\\thwui\\go\\src\\github.com\\twuillemin\\easy-sso-mux\\examples\\fullchain"
 
 func main() {
 
